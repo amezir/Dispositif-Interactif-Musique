@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  border-box: box-sizing;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  font-size: 16px;
+}
+
+.ctnsong {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 40%;
+  gap: 20px;
+  position: fixed;
+
+  overflow-y: auto;
+}

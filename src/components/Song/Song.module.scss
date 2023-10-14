@@ -1,0 +1,41 @@
+.song {
+    display: flex;
+    align-items: center;
+    column-gap: 34px;
+    cursor: pointer;
+    opacity: 0.8;
+    height: 100px;
+    width: 50%;
+    transition: opacity 0.2s ease-in-out;
+    color: #ffffff;
+    padding: 10px;
+
+    &:hover {
+        opacity: 1;
+        margin-left: 10px;
+        background-color: #ffffff2c;
+        border-radius: 5px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        border-radius: 5px;
+        display: flex;
+    }
+}
+
+.active {
+    opacity: 1;
+    margin-left: 10px;
+}
+
+
+.tilte {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 700;
+}

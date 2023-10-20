@@ -6,6 +6,9 @@ export default class Cube {
         this.geometry = new THREE.BoxGeometry(1, 1, 1);
         this.material = new THREE.MeshNormalMaterial({});
         this.mesh = new THREE.Mesh(this.geometry, this.material);
+
+        this.group = new THREE.Group();
+        this.group.add(this.mesh);
     }
 
     tick() {

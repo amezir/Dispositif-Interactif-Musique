@@ -4,6 +4,7 @@ import Search from './components/search/Search';
 import Song from './components/Song/Song';
 import useCustomStore from './CostumStore';
 import { useState } from 'react';
+import Picker from './components/Picker/Picker';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
       </div>
       <Canvas />
       <Search />
+      <Picker />
     </>
   );
 }

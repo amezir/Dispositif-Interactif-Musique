@@ -3,7 +3,7 @@ import AudioController from "../../utils/AudioController";
 
 export default class Line {
     constructor() {
-        this.colors = [0x00ff00, 0x0000ff, 0xff0000, 0x00ffff, 0xff00ff, 0xffff00];
+        this.colors = [0x891180, 0xEEA1EB, 0xCB22D7, 0xFFF6F6, 0xA80038, 0xFD0054];
 
         this.group = new THREE.Group();
 

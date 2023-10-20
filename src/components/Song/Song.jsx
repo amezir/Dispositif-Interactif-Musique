@@ -17,6 +17,9 @@ const Song = ({ data, setCurrentSong }) => {
 
         // Ajoutez la classe "active" à l'élément actuel
         songRef.current.classList.add(style.active);
+
+        // Mettez à jour le titre de la page
+        document.title = `${data.title} - ${data.artist.name}`;
     };
 
     return (

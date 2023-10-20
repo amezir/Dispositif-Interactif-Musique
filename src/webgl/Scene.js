@@ -6,6 +6,7 @@ import Cube from "./Objects/Cube.js"
 
 
 class SCENE {
+
     setup(canvas) {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
@@ -54,13 +55,14 @@ class SCENE {
             powerPreference: "high-performance",
             stencil: false,
             depth: false,
-            // alpha: true
+            alpha: true
         });
 
         this.renderer.toneMapping = THREE.NoToneMapping;
         this.renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-        this.renderer.setClearColor(0x000000);
+
+        // this.renderer.setClearColor(0x000000);
         this.renderer.setSize(this.width, this.height);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     }

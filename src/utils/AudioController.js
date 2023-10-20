@@ -19,7 +19,6 @@ class AUDIO_CONTROLLER {
         this.fdata = new Uint8Array(this.analyser.frequencyBinCount);
 
 
-
         this.analyser.getByteFrequencyData(this.fdata);
 
         this.audioSource.connect(this.analyser);

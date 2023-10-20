@@ -3,12 +3,17 @@
     flex-direction: column;
     justify-content: end;
     align-items: end;
-    margin: 10px;
+    margin: 30px;
     position: fixed;
     gap: 1rem;
     right: 0;
+    bottom: 0;
 
     div:hover {
         cursor: pointer;
     }
+}
+
+.active {
+    text-decoration: line-through;
 }

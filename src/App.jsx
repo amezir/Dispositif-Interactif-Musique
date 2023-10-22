@@ -15,6 +15,13 @@ function App() {
 
   return (
     <>
+      <head>
+        <title>Dispositif-interactif-musique-by-amezir</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta name="description" content="Dispositif interactif de musique" />
+        <meta name="keywords" content="Dispositif interactif de musique" />
+        <meta name="author" content="Amezir" />
+      </head>
       {currentSong && (
         <div style={{ position: 'fixed', top: 0, left: 0, background: `url(${currentSong.album.cover_big})` }} className='currentsong'>
           {/* <div className='currentsong__info'>

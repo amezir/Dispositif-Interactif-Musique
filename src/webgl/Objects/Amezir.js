@@ -8,7 +8,7 @@ export default class Amezir {
 
         this.material = new THREE.MeshNormalMaterial({});
 
-        Scene.gltfLoader.load('/model-3d/logo-iut.glb', (gltf) => {
+        Scene.gltfLoader.load('/model-3d/amezir.glb', (gltf) => {
             this.group = gltf.scene;
 
             this.group.traverse((object) => {
@@ -16,8 +16,6 @@ export default class Amezir {
                     object.material = this.material;
                 }
             });
-
-            this.group.rotation.x = Math.PI / 2;
 
         });
     }
@@ -35,5 +33,5 @@ export default class Amezir {
             )
         }
     }
-}
 
+}

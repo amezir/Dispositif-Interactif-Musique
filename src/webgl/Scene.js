@@ -13,6 +13,7 @@ import Cube from "./Objects/Cube.js"
 import Line from "./Objects/Line.js"
 import LogoIUT from "./Objects/LogoIUT.js"
 import Board from "./Objects/Board.js"
+import Amezir from "./Objects/Amezir.js";
 
 import Pane from "../utils/Pane.js";
 
@@ -22,6 +23,7 @@ class SCENE {
         this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.canvas = canvas;
+        // this.changeVisualizer(4);
 
         this.setupScene();
         this.setupStats();
@@ -56,7 +58,7 @@ class SCENE {
             0.1,
             10000
         );
-        this.camera.position.z = 10;
+        this.camera.position.set(0, 0, 10);
     }
 
     setupControls() {
@@ -64,7 +66,7 @@ class SCENE {
         this.controls.enableDamping = true;
         this.controls.dampingFactor = 0.05;
         this.controls.enablePan = false;
-        this.controls.enableZoom = false;
+        this.controls.enableZoom = true;
     }
 
     setupRenderer() {
@@ -162,6 +164,7 @@ class SCENE {
         this.line = new Line();
         this.board = new Board();
         this.logoIUT = new LogoIUT();
+        this.amezir = new Amezir();
         this.selectedObject = this.cube;
         this.scene.add(this.selectedObject.group);
         // this.camera.position.z = 10;
@@ -173,23 +176,29 @@ class SCENE {
         switch (index) {
             case 0:
                 this.selectedObject = this.cube
-                this.camera.position.z = 10;
+                this.camera.position.set(0, 0, 10);
                 this.bloomPass.strength = 1;
                 break;
             case 1:
                 this.selectedObject = this.line
-                this.camera.position.z = 800;
+                this.camera.position.set(0, 0, 800);
                 this.bloomPass.strength = 0.5;
                 break;
             case 2:
                 this.selectedObject = this.logoIUT
-                this.camera.position.z = 20;
+                this.camera.position.set(0, 0, 20);
                 this.bloomPass.strength = 1;
                 break;
             case 3:
                 this.selectedObject = this.board
-                this.camera.position.z = 80;
+                this.camera.position.set(0, 0, 80);
                 this.bloomPass.strength = 0.5;
+                break;
+            case 4:
+                this.selectedObject = this.amezir
+                this.camera.position.set(0, 0, 50);
+                this.bloomPass.strength = 0.5;
+                console.log(this.selectedObject);
                 break;
 
             default:
@@ -205,8 +214,9 @@ class SCENE {
         // this.line.tick();
         this.selectedObject.tick();
         this.composer.render();
-        this.stats.end();
+
         this.controls.update();
+        this.stats.end();
     };
 
 }

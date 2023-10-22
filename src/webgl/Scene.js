@@ -46,10 +46,10 @@ class SCENE {
         this.scene = new THREE.Scene();
     }
 
-    setupStats() {
-        this.stats = new Stats();
-        document.body.appendChild(this.stats.dom);
-    }
+    // setupStats() {
+    //     this.stats = new Stats();
+    //     document.body.appendChild(this.stats.dom);
+    // }
 
     setupCamera() {
         this.camera = new THREE.PerspectiveCamera(

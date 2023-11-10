@@ -1,12 +1,14 @@
 import style from "./Song.module.scss";
 import AudioController from "../../utils/AudioController";
 import { useRef } from "react";
+import Scene from "../../webgl/Scene";
 
 const Song = ({ data, setCurrentSong }) => {
     const songRef = useRef(null);
 
     const click = () => {
         AudioController.updateSong(data.preview);
+        Scene.cover.updateCover(data.album.cover_big);
         setCurrentSong(data);
 
         // Supprimez la classe "active" de l'élément actuellement actif, s'il y en a un

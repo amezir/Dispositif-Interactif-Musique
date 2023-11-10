@@ -9,6 +9,7 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 
+import Cover from "./Objects/Cover.js";
 import Cube from "./Objects/Cube.js"
 import Line from "./Objects/Line.js"
 import LogoIUT from "./Objects/LogoIUT.js"
@@ -32,9 +33,14 @@ class SCENE {
         this.setupRenderer();
         this.setupPostprocessing();
         this.setupGLTFLoader();
+        this.setTextureLoader();
 
         this.addObjects();
         this.addEvents();
+    }
+
+    setTextureLoader() {
+        this.textureLoader = new THREE.TextureLoader();
     }
 
     setupGLTFLoader() {
@@ -58,7 +64,7 @@ class SCENE {
             0.1,
             10000
         );
-        this.camera.position.set(0, 0, 10);
+        this.camera.position.set(0, 0, 100);
     }
 
     setupControls() {
@@ -160,18 +166,20 @@ class SCENE {
     }
 
     addObjects() {
+        this.cover = new Cover();
         this.cube = new Cube();
         this.line = new Line();
         this.board = new Board();
         this.logoIUT = new LogoIUT();
         this.amezir = new Amezir();
-        this.selectedObject = this.cube;
+        this.selectedObject = this.cover;
+        this.bloomPass.strength = 0;
         this.scene.add(this.selectedObject.group);
         // this.camera.position.z = 10;
     }
 
     changeVisualizer(index) {
-        console.log(index);
+        // console.log(index);
         this.scene.remove(this.selectedObject.group);
         switch (index) {
             case 0:
@@ -198,7 +206,12 @@ class SCENE {
                 this.selectedObject = this.amezir
                 this.camera.position.set(0, 0, 50);
                 this.bloomPass.strength = 0.5;
-                console.log(this.selectedObject);
+                // console.log(this.selectedObject);
+                break;
+            case 5:
+                this.selectedObject = this.cover
+                this.camera.position.set(0, 0, 300);
+                this.bloomPass.strength = 0;
                 break;
 
             default:
@@ -212,7 +225,7 @@ class SCENE {
         this.stats.begin();
         // this.cube.tick();
         // this.line.tick();
-        this.selectedObject.tick();
+        this.selectedObject.tick(deltaTime);
         this.composer.render();
 
         this.controls.update();

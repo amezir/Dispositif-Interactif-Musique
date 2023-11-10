@@ -18,6 +18,7 @@ const Picker = () => {
         <div onClick={() => pickVisualizer(2)} className={activeIndex === 2 ? style.active : ""}>Logo IUT</div>
         <div onClick={() => pickVisualizer(3)} className={activeIndex === 3 ? style.active : ""}>Board</div>
         <div onClick={() => pickVisualizer(4)} className={activeIndex === 4 ? style.active : ""}>Amezir</div>
+        <div onClick={() => pickVisualizer(5)} className={activeIndex === 5 ? style.active : ""}>Cover</div>
     </div>
 };
 

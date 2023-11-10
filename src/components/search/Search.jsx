@@ -10,7 +10,7 @@ const Search = () => {
     const setSongs = useCustomStore((state) => state.setSongs);
 
     const onDrop = (audio) => {
-        console.log(audio);
+        // console.log(audio);
         const src = URL.createObjectURL(audio[0]);
 
         const audioObject = {
@@ -47,7 +47,7 @@ const Search = () => {
     }
         , []);
 
-    console.log(isDragActive);
+    // console.log(isDragActive);
 
     const getSongs = async () => {
         let response = await fetchJsonp(
@@ -56,7 +56,7 @@ const Search = () => {
 
         response = await response.json();
 
-        console.log(response);
+        // console.log(response);
 
         const data = response.data.slice(0, 6);
 

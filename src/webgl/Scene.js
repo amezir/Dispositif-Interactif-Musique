@@ -64,7 +64,7 @@ class SCENE {
             0.1,
             10000
         );
-        this.camera.position.set(0, 0, 100);
+        this.camera.position.set(0, 0, 10);
     }
 
     setupControls() {
@@ -172,8 +172,8 @@ class SCENE {
         this.board = new Board();
         this.logoIUT = new LogoIUT();
         this.amezir = new Amezir();
-        this.selectedObject = this.cover;
-        this.bloomPass.strength = 0;
+        this.selectedObject = this.cube;
+        this.bloomPass.strength = 1;
         this.scene.add(this.selectedObject.group);
         // this.camera.position.z = 10;
     }

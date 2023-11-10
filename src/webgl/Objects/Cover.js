@@ -45,7 +45,7 @@ export default class Cover {
         this.folder.addBinding(this.material.uniforms.uNoiseFrequency, "value", {
             label: "Frequency",
             min: 0,
-            max: 10,
+            max: 2,
         });
 
     }
